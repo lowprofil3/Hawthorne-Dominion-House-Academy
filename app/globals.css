@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8f5f1;
+  --foreground: #262626;
+  --surface: #fefbf7;
+  --ink: #231f1a;
+  --accent: #6b4ef4;
+  --accent-dark: #4a36ad;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #07060a;
+    --foreground: #ededed;
+    --surface: #111022;
+    --ink: #f7f5ff;
+    --accent: #a995ff;
+    --accent-dark: #8676d6;
+  }
+}
+
+body {
+  color: var(--ink);
+  background: radial-gradient(circle at top, var(--background), var(--surface));
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+.text-ink {
+  color: var(--ink);
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-colors;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: white;
+  box-shadow: 0 10px 30px rgba(75, 54, 173, 0.25);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.03);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
