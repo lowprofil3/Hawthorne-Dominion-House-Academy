@@ -2,8 +2,6 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { NextResponse } from "next/server";
 
-import { kvGet } from "@/lib/kv";
-
 const TOKEN_COOKIE_NAME = "hdha_token";
 const TOKEN_TTL = 60 * 60 * 24 * 7; // 7 days
 
@@ -13,6 +11,18 @@ function getJwtSecret() {
     throw new Error("JWT_SECRET environment variable is not set");
   }
   return secret;
+}
+
+function getManualAuthConfig() {
+  const username = process.env.MANUAL_AUTH_USERNAME;
+  const passwordHash = process.env.MANUAL_AUTH_PASSWORD_HASH;
+  const displayName = process.env.MANUAL_AUTH_DISPLAY_NAME ?? "Academy Student";
+
+  if (!username || !passwordHash) {
+    throw new Error("Manual authentication environment variables are not fully configured");
+  }
+
+  return { username, passwordHash, displayName };
 }
 
 function createAuthToken(payload: { sub: string; email: string; name: string }) {
@@ -34,32 +44,33 @@ function attachAuthCookie(response: NextResponse, token: string) {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const email = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
+    const username = typeof body.username === "string" ? body.username.trim().toLowerCase() : "";
     const password = typeof body.password === "string" ? body.password : "";
 
-    if (!email || !password) {
-      return NextResponse.json({ error: "Email and password are required." }, { status: 400 });
+    if (!username || !password) {
+      return NextResponse.json({ error: "Username and password are required." }, { status: 400 });
     }
 
-    const userId = await kvGet<string>(`user:email:${email}`);
-    if (!userId) {
-      return NextResponse.json({ error: "Invalid email or password." }, { status: 401 });
+    const { username: expectedUsername, passwordHash, displayName } = getManualAuthConfig();
+
+    if (username !== expectedUsername.toLowerCase()) {
+      return NextResponse.json({ error: "Invalid username or password." }, { status: 401 });
     }
 
-    const userRecord = await kvGet<{ id: string; email: string; passwordHash: string; name: string }>(`user:${userId}`);
-
-    if (!userRecord) {
-      return NextResponse.json({ error: "Invalid email or password." }, { status: 401 });
-    }
-
-    const passwordMatches = await bcrypt.compare(password, userRecord.passwordHash);
+    const passwordMatches = await bcrypt.compare(password, passwordHash);
     if (!passwordMatches) {
-      return NextResponse.json({ error: "Invalid email or password." }, { status: 401 });
+      return NextResponse.json({ error: "Invalid username or password." }, { status: 401 });
     }
 
-    const token = createAuthToken({ sub: userRecord.id, email: userRecord.email, name: userRecord.name });
+    const user = {
+      id: "manual-student",
+      email: `${expectedUsername}@hawthorne.local`,
+      name: displayName,
+    } as const;
 
-    const response = NextResponse.json({ user: { id: userRecord.id, email: userRecord.email, name: userRecord.name } });
+    const token = createAuthToken({ sub: user.id, email: user.email, name: user.name });
+
+    const response = NextResponse.json({ user });
     attachAuthCookie(response, token);
     return response;
   } catch (error) {

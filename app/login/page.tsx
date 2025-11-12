@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -19,7 +19,7 @@ export default function LoginPage() {
       const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password }),
       });
 
       if (!response.ok) {
@@ -52,16 +52,16 @@ export default function LoginPage() {
           className="mx-auto w-full max-w-xl space-y-6 rounded-[32px] border border-white/40 bg-ink/80 p-10 shadow-regal"
         >
           <div className="space-y-2 text-left">
-            <label htmlFor="email" className="block text-sm uppercase tracking-[0.3em] text-white/90">
-              Academy Email
+            <label htmlFor="username" className="block text-sm uppercase tracking-[0.3em] text-white/90">
+              Academy Username
             </label>
             <input
-              id="email"
-              type="email"
+              id="username"
+              type="text"
               required
-              autoComplete="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
+              autoComplete="username"
+              value={username}
+              onChange={(event) => setUsername(event.target.value)}
               className="w-full rounded-lg border border-white/40 bg-ink/50 px-3 py-2 text-base text-ivory shadow-sm focus:border-crimson focus:outline-none focus:ring-1 focus:ring-crimson"
             />
           </div>
