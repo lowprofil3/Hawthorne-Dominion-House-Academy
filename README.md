@@ -15,6 +15,23 @@ npm run dev
 
 Visit [http://localhost:3000](http://localhost:3000) to explore the experience locally.
 
+### Environment Variables
+
+Authentication is backed by a single manual account. Copy `.env.example` to `.env.local` (or `.env`) and provide values for the following variables before starting the server:
+
+| Variable | Description |
+| --- | --- |
+| `JWT_SECRET` | Secret string used to sign the session token. |
+| `MANUAL_AUTH_USERNAME` | Username allowed to access the dashboard. |
+| `MANUAL_AUTH_PASSWORD_HASH` | Bcrypt hash of the permitted password. |
+| `MANUAL_AUTH_DISPLAY_NAME` | Optional friendly display name for the dashboard. |
+
+To generate a new password hash you can run:
+
+```bash
+node -e "const bcrypt=require('bcrypt');bcrypt.hash('your-password',12).then(console.log);"
+```
+
 ## Project Structure
 
 ```
