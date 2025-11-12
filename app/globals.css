@@ -97,7 +97,7 @@ main {
   h3,
   h4,
   h5 {
-    color: var(--crimson);
+    color: var(--gilded);
     font-style: italic;
   }
 
