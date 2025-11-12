@@ -6,19 +6,19 @@
 
 :root {
   --ink: #0a0807;
-  --crimson: #6a1717;
-  --crimson-deep: #401010;
+  --crimson: #111111;
+  --crimson-deep: #0a0a0a;
   --gilded: #ffffff;
   --ivory: #eae6df;
   --parchment-dark: #18120e;
-  --smoke: rgba(12, 9, 7, 0.88);
+  --smoke: rgba(12, 12, 12, 0.88);
 }
 
 body {
   background-color: var(--ink);
-  background-image: radial-gradient(circle at 18% 15%, rgba(106, 23, 23, 0.25), transparent 60%),
-      radial-gradient(circle at 82% 12%, rgba(58, 26, 20, 0.4), transparent 65%),
-      linear-gradient(140deg, rgba(7, 5, 4, 0.95), rgba(21, 14, 11, 0.92));
+  background-image: radial-gradient(circle at 18% 15%, rgba(28, 28, 28, 0.25), transparent 60%),
+      radial-gradient(circle at 82% 12%, rgba(20, 20, 20, 0.4), transparent 65%),
+      linear-gradient(140deg, rgba(7, 7, 7, 0.95), rgba(18, 18, 18, 0.92));
   color: var(--ivory);
   font-family: "Lora", "Crimson Text", ui-serif, Georgia, "Times New Roman", serif;
   letter-spacing: 0.01em;
@@ -112,9 +112,9 @@ main {
 
 @layer components {
   .hero-backdrop {
-    background: radial-gradient(circle at 18% 16%, rgba(106, 23, 23, 0.3), transparent 68%),
-      radial-gradient(circle at 82% 14%, rgba(58, 26, 20, 0.36), transparent 70%),
-      linear-gradient(140deg, rgba(7, 5, 4, 0.96), rgba(24, 16, 12, 0.9));
+    background: radial-gradient(circle at 18% 16%, rgba(24, 24, 24, 0.3), transparent 68%),
+      radial-gradient(circle at 82% 14%, rgba(16, 16, 16, 0.36), transparent 70%),
+      linear-gradient(140deg, rgba(7, 7, 7, 0.96), rgba(18, 18, 18, 0.9));
     position: relative;
     overflow: hidden;
   }
@@ -124,7 +124,7 @@ main {
     position: absolute;
     inset: -40% -25% -15%;
     background: radial-gradient(circle at 45% 35%, rgba(255, 255, 255, 0.22), transparent 62%),
-      radial-gradient(circle at 65% 18%, rgba(106, 23, 23, 0.18), transparent 70%);
+      radial-gradient(circle at 65% 18%, rgba(34, 34, 34, 0.18), transparent 70%);
     mix-blend-mode: soft-light;
     opacity: 0.85;
     animation: aureateGlow 8s ease-in-out infinite;
@@ -180,7 +180,7 @@ main {
 
   .button-primary {
     @apply inline-flex items-center justify-center rounded-full px-10 py-3 text-sm tracking-[0.45em] transition-all duration-300 ease-in-out;
-    background: linear-gradient(135deg, rgba(106, 23, 23, 0.92), rgba(40, 11, 12, 0.95));
+    background: linear-gradient(135deg, rgba(32, 32, 32, 0.92), rgba(12, 12, 12, 0.95));
     border: 1px solid rgba(255, 255, 255, 0.38);
     color: var(--ivory);
     text-shadow: 0 1px 10px rgba(255, 255, 255, 0.32);
@@ -214,7 +214,7 @@ main {
 
   .panel {
     @apply rounded-[28px] border px-10 py-10 transition-all duration-300 ease-in-out;
-    background: linear-gradient(135deg, rgba(26, 20, 16, 0.92), rgba(12, 9, 7, 0.88));
+    background: linear-gradient(135deg, rgba(24, 24, 24, 0.92), rgba(12, 12, 12, 0.88));
     border-color: rgba(255, 255, 255, 0.32);
     box-shadow: 0 28px 58px rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(6px);

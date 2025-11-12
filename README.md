@@ -32,7 +32,7 @@ Visit [http://localhost:3000](http://localhost:3000) to explore the experience l
 The academy interface now embraces a heritage-inspired dark palette to evoke the ambience of an elite nineteenth-century
 institution. Key visual updates include:
 
-- **Palette** — A near-black ink backdrop is accented by deep crimson highlights, crisp white detailing, and warm ivory type to
+- **Palette** — A near-black ink backdrop is accented by onyx highlights, crisp white detailing, and warm ivory type to
   preserve readability while enhancing drama.
 - **Typography** — Cormorant Garamond headings and Lora body copy combine with wide uppercase tracking to suggest engraved
   inscriptions and formal insignia.
