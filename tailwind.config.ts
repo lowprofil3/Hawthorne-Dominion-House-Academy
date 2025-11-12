@@ -16,7 +16,7 @@ const config: Config = {
         ivory: "var(--ivory)",
         parchmentDark: "var(--parchment-dark)",
         "ink-deep": "#0a0807",
-        "accent-crimson": "var(--gilded)",
+        "accent-crimson": "#111111",
       },
       fontFamily: {
         display: ["Cormorant Garamond", "EB Garamond", "ui-serif", "Georgia", "serif"],
@@ -26,4 +26,5 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;
