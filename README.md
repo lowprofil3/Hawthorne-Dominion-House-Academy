@@ -25,8 +25,6 @@ Visit [http://localhost:3000](http://localhost:3000) to explore the experience l
   dashboard/page.tsx // Mock dashboard with messages, assignments, and grades panels
 /lib
   api.ts           // Helper for performing JSON API requests
-/public
-  crest.png        // Academy crest artwork
 ```
 
 ## Deployment

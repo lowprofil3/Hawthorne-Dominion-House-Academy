@@ -49,7 +49,7 @@ export default function LoginPage() {
         </header>
         <form
           onSubmit={handleSubmit}
-          className="mx-auto w-full max-w-xl space-y-6 rounded-[32px] border border-gilded/40 bg-ivory/85 p-10 shadow-crest"
+          className="mx-auto w-full max-w-xl space-y-6 rounded-[32px] border border-gilded/40 bg-ivory/85 p-10 shadow-regal"
         >
           <div className="space-y-2 text-left">
             <label htmlFor="email" className="block text-sm uppercase tracking-[0.3em] text-ink/80">

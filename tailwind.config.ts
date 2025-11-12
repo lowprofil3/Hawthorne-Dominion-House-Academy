@@ -18,9 +18,6 @@ const config: Config = {
       fontFamily: {
         serif: ["Cormorant Garamond", "ui-serif", "Georgia", "serif"],
       },
-      borderRadius: {
-        crest: "40px",
-      },
     },
   },
   plugins: [],

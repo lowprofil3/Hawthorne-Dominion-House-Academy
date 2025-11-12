@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
@@ -36,7 +35,6 @@ export default function RootLayout({
           <header className="border-b border-gilded/40 bg-ivory/90 backdrop-blur">
             <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
               <Link href="/" className="flex items-center gap-3 text-lg font-semibold uppercase tracking-[0.3em] text-ink">
-                <Image src="/crest.png" alt="Hawthorne Dominion House Academy crest" width={48} height={48} priority />
                 <span className="hidden sm:inline">Hawthorne Dominion House Academy</span>
                 <span className="sm:hidden">HDH Academy</span>
               </Link>

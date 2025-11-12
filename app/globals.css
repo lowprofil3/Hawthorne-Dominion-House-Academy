@@ -47,7 +47,7 @@ a:hover {
   border-color: var(--gilded);
 }
 
-.shadow-crest {
+.shadow-regal {
   box-shadow: 0 35px 55px rgba(31, 26, 23, 0.08);
 }
 
@@ -73,7 +73,7 @@ a:hover {
   }
 
   .panel {
-    @apply rounded-3xl border p-8 shadow-crest backdrop-blur;
+    @apply rounded-3xl border p-8 shadow-regal backdrop-blur;
     border-color: rgba(182, 139, 45, 0.3);
     background-color: rgba(251, 248, 241, 0.8);
   }
