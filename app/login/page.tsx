@@ -37,7 +37,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="bg-parchment">
+    <div className="bg-ink text-ivory">
       <main className="mx-auto flex min-h-[calc(100vh-10rem)] max-w-4xl flex-col justify-center gap-10 px-6 py-24">
         <header className="space-y-4 text-center">
           <p className="text-xs uppercase tracking-[0.5em] text-crimson">Scholars’ Entrance</p>
@@ -49,7 +49,7 @@ export default function LoginPage() {
         </header>
         <form
           onSubmit={handleSubmit}
-          className="mx-auto w-full max-w-xl space-y-6 rounded-[32px] border border-white/40 bg-ivory/85 p-10 shadow-regal"
+          className="mx-auto w-full max-w-xl space-y-6 rounded-[32px] border border-white/40 bg-ink/80 p-10 shadow-regal"
         >
           <div className="space-y-2 text-left">
             <label htmlFor="email" className="block text-sm uppercase tracking-[0.3em] text-white/90">
@@ -62,7 +62,7 @@ export default function LoginPage() {
               autoComplete="email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              className="w-full rounded-lg border border-white/40 bg-parchment/60 px-3 py-2 text-base text-ink shadow-sm focus:border-crimson focus:outline-none focus:ring-1 focus:ring-crimson"
+              className="w-full rounded-lg border border-white/40 bg-ink/50 px-3 py-2 text-base text-ivory shadow-sm focus:border-crimson focus:outline-none focus:ring-1 focus:ring-crimson"
             />
           </div>
           <div className="space-y-2 text-left">
@@ -76,7 +76,7 @@ export default function LoginPage() {
               autoComplete="current-password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
-              className="w-full rounded-lg border border-white/40 bg-parchment/60 px-3 py-2 text-base text-ink shadow-sm focus:border-crimson focus:outline-none focus:ring-1 focus:ring-crimson"
+              className="w-full rounded-lg border border-white/40 bg-ink/50 px-3 py-2 text-base text-ivory shadow-sm focus:border-crimson focus:outline-none focus:ring-1 focus:ring-crimson"
             />
           </div>
           {error ? <p className="text-sm text-crimson">{error}</p> : null}
