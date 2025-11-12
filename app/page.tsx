@@ -40,9 +40,8 @@ export default function HomePage() {
   return (
     <main className="bg-parchment">
       <section className="fade-in border-b border-gilded/30 bg-ivory/60">
-        <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-8">
-            <p className="text-xs uppercase tracking-[0.6em] text-crimson">Virtus. Disciplina. Honor.</p>
+        <div className="mx-auto max-w-4xl px-6 py-24">
+          <div className="space-y-6">
             <h1 className="text-5xl font-semibold leading-tight text-ink md:text-6xl">
               Hawthorne Dominion House Academy
             </h1>
@@ -62,15 +61,6 @@ export default function HomePage() {
                 Learn More
               </Link>
             </div>
-          </div>
-          <div className="relative mx-auto flex max-w-sm flex-col items-center gap-6 rounded-[40px] border border-gilded/40 bg-ivory/70 p-10 text-center shadow-regal">
-            <div className="flex h-24 w-24 items-center justify-center rounded-full border border-gilded/50 bg-parchment/60 text-lg font-semibold uppercase tracking-[0.6em] text-crimson">
-              HDH
-            </div>
-            <p className="text-sm uppercase tracking-[0.45em] text-crimson">Motto</p>
-            <p className="text-xl leading-relaxed text-ink/90">
-              “In discipline we discover truth; in honor we carry it forth.”
-            </p>
           </div>
         </div>
       </section>
