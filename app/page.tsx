@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const academies = [
@@ -64,9 +63,9 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="relative mx-auto flex max-w-sm flex-col items-center gap-6 rounded-[40px] border border-gilded/40 bg-ivory/70 p-10 text-center shadow-crest">
-            <div className="relative h-28 w-28">
-              <Image src="/crest.png" alt="Academy crest" fill sizes="112px" className="object-contain" priority />
+          <div className="relative mx-auto flex max-w-sm flex-col items-center gap-6 rounded-[40px] border border-gilded/40 bg-ivory/70 p-10 text-center shadow-regal">
+            <div className="flex h-24 w-24 items-center justify-center rounded-full border border-gilded/50 bg-parchment/60 text-lg font-semibold uppercase tracking-[0.6em] text-crimson">
+              HDH
             </div>
             <p className="text-sm uppercase tracking-[0.45em] text-crimson">Motto</p>
             <p className="text-xl leading-relaxed text-ink/90">
@@ -91,7 +90,7 @@ export default function HomePage() {
               Our community is one of quiet resolve, precision, and refined courtesy.
             </p>
           </div>
-          <div className="space-y-6 rounded-[32px] border border-gilded/40 bg-ivory/80 p-10 shadow-crest">
+          <div className="space-y-6 rounded-[32px] border border-gilded/40 bg-ivory/80 p-10 shadow-regal">
             <h3 className="text-2xl font-semibold text-ink">Dominion Standards</h3>
             <ul className="space-y-4 text-ink/75">
               <li><span className="font-semibold text-ink">Order:</span> Every day commences with ceremonial assembly and articulated intention.</li>
