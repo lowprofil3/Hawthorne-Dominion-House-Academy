@@ -3,48 +3,96 @@
 @tailwind utilities;
 
 :root {
-  --background: #f8f5f1;
-  --foreground: #262626;
-  --surface: #fefbf7;
-  --ink: #231f1a;
-  --accent: #6b4ef4;
-  --accent-dark: #4a36ad;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #07060a;
-    --foreground: #ededed;
-    --surface: #111022;
-    --ink: #f7f5ff;
-    --accent: #a995ff;
-    --accent-dark: #8676d6;
-  }
+  --parchment: #f7f2e7;
+  --ivory: #fbf8f1;
+  --ink: #1f1a17;
+  --crimson: #7b0d1e;
+  --crimson-dark: #580918;
+  --gilded: #b68b2d;
+  --muted: #706b63;
 }
 
 body {
+  background-color: var(--parchment);
   color: var(--ink);
-  background: radial-gradient(circle at top, var(--background), var(--surface));
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", serif;
+  letter-spacing: 0.01em;
 }
 
-.bg-surface {
-  background-color: var(--surface);
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--crimson);
+}
+
+.bg-parchment {
+  background-color: var(--parchment);
+}
+
+.bg-ivory {
+  background-color: var(--ivory);
 }
 
 .text-ink {
   color: var(--ink);
 }
 
-.btn-primary {
-  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-colors;
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-  color: white;
-  box-shadow: 0 10px 30px rgba(75, 54, 173, 0.25);
+.text-crimson {
+  color: var(--crimson);
 }
 
-.btn-primary:hover {
-  filter: brightness(1.03);
+.border-gilded {
+  border-color: var(--gilded);
+}
+
+.shadow-crest {
+  box-shadow: 0 35px 55px rgba(31, 26, 23, 0.08);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: 0.04em;
+  }
+}
+
+@layer components {
+  .button-primary {
+    @apply inline-flex items-center justify-center rounded-full px-8 py-3 text-sm uppercase tracking-[0.35em] transition-colors;
+    background: linear-gradient(120deg, var(--crimson), var(--crimson-dark));
+    color: var(--ivory);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .button-primary:hover {
+    filter: brightness(1.05);
+  }
+
+  .panel {
+    @apply rounded-3xl border p-8 shadow-crest backdrop-blur;
+    border-color: rgba(182, 139, 45, 0.3);
+    background-color: rgba(251, 248, 241, 0.8);
+  }
+
+  .fade-in {
+    animation: fadeIn 0.9s ease both;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @layer utilities {
