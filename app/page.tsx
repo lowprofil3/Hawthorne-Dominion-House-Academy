@@ -41,15 +41,15 @@ export default function HomePage() {
     <main className="bg-parchment">
       <section className="fade-in border-b border-gilded/30 bg-ivory/60">
         <div className="mx-auto max-w-4xl px-6 py-24">
-          <div className="space-y-6">
+          <div className="space-y-6 text-center">
             <h1 className="text-5xl font-semibold leading-tight text-ink md:text-6xl">
               Hawthorne Dominion House Academy
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-ink/80">
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-ink/80">
               Founded in 1847, Hawthorne Dominion House Academy forges scholars of unwavering conviction. Within our halls,
               tradition and modern scholarship convene to cultivate minds prepared to steward the dominion with wisdom and grace.
             </p>
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/login" className="button-primary" prefetch={false}>
                 Enter Academy
               </Link>
