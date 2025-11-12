@@ -27,6 +27,20 @@ Visit [http://localhost:3000](http://localhost:3000) to explore the experience l
   api.ts           // Helper for performing JSON API requests
 ```
 
+## Traditional Dark Theme
+
+The academy interface now embraces a heritage-inspired dark palette to evoke the ambience of an elite nineteenth-century
+institution. Key visual updates include:
+
+- **Palette** — A near-black ink backdrop is accented by deep crimson highlights, muted gold detailing, and warm ivory type to
+  preserve readability while enhancing drama.
+- **Typography** — Cormorant Garamond headings and Lora body copy combine with wide uppercase tracking to suggest engraved
+  inscriptions and formal insignia.
+- **Atmosphere** — Textured gradients, gold dividers, and subtle candlelight animation add depth without altering the existing
+  layout or content hierarchy.
+
+These refinements retain the page structure while reinforcing the academy’s exclusive, tradition-rich tone.
+
 ## Deployment
 
 This project is optimised for deployment on [Vercel](https://vercel.com/):
