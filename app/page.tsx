@@ -63,14 +63,10 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="relative mx-auto flex max-w-sm flex-col items-center gap-6 rounded-[40px] border border-gilded/40 bg-ivory/70 p-10 text-center shadow-regal">
+          <div className="relative mx-auto flex max-w-sm flex-col items-center gap-4 rounded-[40px] border border-gilded/40 bg-ivory/70 p-10 text-center shadow-regal">
             <div className="flex h-24 w-24 items-center justify-center rounded-full border border-gilded/50 bg-parchment/60 text-lg font-semibold uppercase tracking-[0.6em] text-crimson">
               HDH
             </div>
-            <p className="text-sm uppercase tracking-[0.45em] text-crimson">Motto</p>
-            <p className="text-xl leading-relaxed text-ink/90">
-              “In discipline we discover truth; in honor we carry it forth.”
-            </p>
           </div>
         </div>
       </section>
