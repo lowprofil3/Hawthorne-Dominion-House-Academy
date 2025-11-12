@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${cormorant.className} bg-parchment text-ink antialiased`}>
+      <body className={`${cormorant.className} bg-ink text-ivory antialiased`}>
         <div className="flex min-h-screen flex-col">
           <header className="border-b border-white/40 bg-ink-deep/95 text-white backdrop-blur">
             <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
