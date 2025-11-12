@@ -39,18 +39,18 @@ const facultyHighlights = [
 export default function HomePage() {
   return (
     <main className="bg-ink text-ivory">
-      <section className="hero-backdrop candle-flicker fade-in border-b border-gold/25">
+      <section className="hero-backdrop candle-flicker fade-in border-b border-white/25">
         <div className="relative mx-auto flex max-w-5xl flex-col items-center px-6 py-32 text-center">
-          <div className="hero-crest relative mb-4 flex h-24 w-24 items-center justify-center rounded-full border border-gold/60 bg-ink/70 text-3xl font-semibold tracking-[0.4em] text-gold shadow-regal">
+          <div className="hero-crest relative mb-4 flex h-24 w-24 items-center justify-center rounded-full border border-white/60 bg-ink/70 text-3xl font-semibold tracking-[0.4em] text-white shadow-regal">
             HD
           </div>
           <p
-            className="font-display text-[0.7rem] tracking-[0.25em] text-gold/90 sm:text-xs"
+            className="font-display text-[0.7rem] tracking-[0.25em] text-white/90 sm:text-xs"
             style={{ fontVariant: "small-caps" }}
           >
             Sapientia et Disciplina
           </p>
-          <h1 className="mt-6 font-display text-5xl font-semibold tracking-[0.6em] text-gold md:text-6xl">
+          <h1 className="mt-6 font-display text-5xl font-semibold tracking-[0.6em] text-white md:text-6xl">
             Hawthorne Dominion House Academy
           </h1>
           <p className="mt-6 max-w-3xl font-body text-lg leading-relaxed text-ivory/90">
@@ -68,7 +68,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="fade-in-delayed section-vignette border-b border-gold/15 bg-parchmentDark/60">
+      <section id="about" className="fade-in-delayed section-vignette border-b border-white/15 bg-parchmentDark/60">
         <div className="mx-auto grid max-w-6xl gap-16 px-6 py-24 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="space-y-8">
             <div className="section-heading">
@@ -106,7 +106,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="academics" className="fade-in section-vignette border-b border-gold/15 bg-ink">
+      <section id="academics" className="fade-in section-vignette border-b border-white/15 bg-ink">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="max-w-4xl space-y-8">
             <div className="section-heading">
@@ -133,7 +133,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="admissions" className="fade-in-delayed section-vignette border-b border-gold/15 bg-parchmentDark/60">
+      <section id="admissions" className="fade-in-delayed section-vignette border-b border-white/15 bg-parchmentDark/60">
         <div className="mx-auto grid max-w-6xl gap-16 px-6 py-24 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="space-y-8">
             <div className="section-heading">
@@ -169,7 +169,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="faculty" className="fade-in section-vignette border-b border-gold/15 bg-ink">
+      <section id="faculty" className="fade-in section-vignette border-b border-white/15 bg-ink">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="max-w-4xl space-y-8">
             <div className="section-heading">
@@ -198,9 +198,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer className="footer-vignette border-t border-gold/25 bg-ink-deep/95">
+      <footer className="footer-vignette border-t border-white/25 bg-ink-deep/95">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-6 py-10 text-center">
-          <span className="font-display text-xs tracking-[0.6em] text-gold" style={{ fontVariant: "small-caps" }}>
+          <span className="font-display text-xs tracking-[0.6em] text-white" style={{ fontVariant: "small-caps" }}>
             Sapientia et Disciplina
           </span>
           <p className="font-display text-[11px] tracking-[0.5em] text-ivory/60" style={{ fontVariant: "small-caps" }}>

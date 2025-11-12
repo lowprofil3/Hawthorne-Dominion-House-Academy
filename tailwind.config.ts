@@ -15,9 +15,7 @@ const config: Config = {
         gilded: "var(--gilded)",
         ivory: "var(--ivory)",
         parchmentDark: "var(--parchment-dark)",
-        shadowGold: "var(--shadow-gold)",
         "ink-deep": "#0a0807",
-        gold: "#c5b273",
         "accent-crimson": "#6a1717",
       },
       fontFamily: {
