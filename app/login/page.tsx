@@ -37,51 +37,58 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-md flex-col justify-center gap-8 px-6 py-16">
-      <div className="space-y-3 text-center">
-        <h1 className="text-3xl font-semibold text-slate-900 dark:text-slate-100">Welcome back</h1>
-        <p className="text-sm text-slate-600 dark:text-slate-300">
-          Sign in to continue to the Hawthorne Dominion House Academy dashboard.
-        </p>
-      </div>
-      <form onSubmit={handleSubmit} className="space-y-6 rounded-2xl border border-slate-200/70 bg-white/80 p-8 shadow-lg backdrop-blur dark:border-slate-700/70 dark:bg-slate-900/40">
-        <div className="space-y-2">
-          <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-            Email
-          </label>
-          <input
-            id="email"
-            type="email"
-            required
-            autoComplete="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100"
-          />
-        </div>
-        <div className="space-y-2">
-          <label htmlFor="password" className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-            Password
-          </label>
-          <input
-            id="password"
-            type="password"
-            required
-            autoComplete="current-password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-            className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100"
-          />
-        </div>
-        {error ? <p className="text-sm text-rose-600 dark:text-rose-400">{error}</p> : null}
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-indigo-400"
+    <div className="bg-parchment">
+      <main className="mx-auto flex min-h-[calc(100vh-10rem)] max-w-4xl flex-col justify-center gap-10 px-6 py-24">
+        <header className="space-y-4 text-center">
+          <p className="text-xs uppercase tracking-[0.5em] text-crimson">Scholars’ Entrance</p>
+          <h1 className="text-4xl font-semibold text-ink">Student Login</h1>
+          <p className="mx-auto max-w-2xl text-base text-ink/70">
+            Access your Hawthorne Dominion House Academy dashboard to review assignments, receive faculty correspondence, and
+            remain apprised of your standing.
+          </p>
+        </header>
+        <form
+          onSubmit={handleSubmit}
+          className="mx-auto w-full max-w-xl space-y-6 rounded-[32px] border border-gilded/40 bg-ivory/85 p-10 shadow-crest"
         >
-          {isSubmitting ? "Signing in..." : "Sign in"}
-        </button>
-      </form>
-    </main>
+          <div className="space-y-2 text-left">
+            <label htmlFor="email" className="block text-sm uppercase tracking-[0.3em] text-ink/80">
+              Academy Email
+            </label>
+            <input
+              id="email"
+              type="email"
+              required
+              autoComplete="email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              className="w-full rounded-lg border border-gilded/40 bg-parchment/60 px-3 py-2 text-base text-ink shadow-sm focus:border-crimson focus:outline-none focus:ring-1 focus:ring-crimson"
+            />
+          </div>
+          <div className="space-y-2 text-left">
+            <label htmlFor="password" className="block text-sm uppercase tracking-[0.3em] text-ink/80">
+              Password
+            </label>
+            <input
+              id="password"
+              type="password"
+              required
+              autoComplete="current-password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              className="w-full rounded-lg border border-gilded/40 bg-parchment/60 px-3 py-2 text-base text-ink shadow-sm focus:border-crimson focus:outline-none focus:ring-1 focus:ring-crimson"
+            />
+          </div>
+          {error ? <p className="text-sm text-crimson">{error}</p> : null}
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="button-primary w-full justify-center disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {isSubmitting ? "Signing In" : "Enter the Hall"}
+          </button>
+        </form>
+      </main>
+    </div>
   );
 }

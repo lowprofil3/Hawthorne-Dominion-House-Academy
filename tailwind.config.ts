@@ -9,8 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        parchment: "var(--parchment)",
+        ivory: "var(--ivory)",
+        ink: "var(--ink)",
+        crimson: "var(--crimson)",
+        gilded: "var(--gilded)",
+      },
+      fontFamily: {
+        serif: ["Cormorant Garamond", "ui-serif", "Georgia", "serif"],
+      },
+      borderRadius: {
+        crest: "40px",
       },
     },
   },
