@@ -41,8 +41,8 @@ export default function LoginPage() {
       <main className="mx-auto flex min-h-[calc(100vh-10rem)] max-w-4xl flex-col justify-center gap-10 px-6 py-24">
         <header className="space-y-4 text-center">
           <p className="text-xs uppercase tracking-[0.5em] text-crimson">Scholars’ Entrance</p>
-          <h1 className="text-4xl font-semibold text-ink">Student Login</h1>
-          <p className="mx-auto max-w-2xl text-base text-ink/70">
+          <h1 className="text-4xl font-semibold text-gold">Student Login</h1>
+          <p className="mx-auto max-w-2xl text-base text-ivory/80">
             Access your Hawthorne Dominion House Academy dashboard to review assignments, receive faculty correspondence, and
             remain apprised of your standing.
           </p>
@@ -52,7 +52,7 @@ export default function LoginPage() {
           className="mx-auto w-full max-w-xl space-y-6 rounded-[32px] border border-gilded/40 bg-ivory/85 p-10 shadow-regal"
         >
           <div className="space-y-2 text-left">
-            <label htmlFor="email" className="block text-sm uppercase tracking-[0.3em] text-ink/80">
+            <label htmlFor="email" className="block text-sm uppercase tracking-[0.3em] text-gold/90">
               Academy Email
             </label>
             <input
@@ -66,7 +66,7 @@ export default function LoginPage() {
             />
           </div>
           <div className="space-y-2 text-left">
-            <label htmlFor="password" className="block text-sm uppercase tracking-[0.3em] text-ink/80">
+            <label htmlFor="password" className="block text-sm uppercase tracking-[0.3em] text-gold/90">
               Password
             </label>
             <input
