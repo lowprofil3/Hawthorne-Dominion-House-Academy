@@ -1,22 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:wght@500;600&family=Lora:wght@400;500;600&family=Crimson+Text:wght@400;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --parchment: #f7f2e7;
-  --ivory: #fbf8f1;
-  --ink: #1f1a17;
-  --crimson: #7b0d1e;
-  --crimson-dark: #580918;
-  --gilded: #b68b2d;
-  --muted: #706b63;
+  --ink: #0e0c0a;
+  --crimson: #7a1e1e;
+  --crimson-deep: #401313;
+  --gilded: #bfa46f;
+  --ivory: #f5f0e6;
+  --parchment-dark: #181410;
+  --shadow-gold: rgba(191, 164, 111, 0.45);
+  --smoke: rgba(15, 12, 9, 0.9);
 }
 
 body {
-  background-color: var(--parchment);
-  color: var(--ink);
-  font-family: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", serif;
+  background-color: var(--ink);
+  background-image: radial-gradient(circle at top, rgba(122, 30, 30, 0.25), transparent 55%),
+    radial-gradient(circle at bottom, rgba(38, 26, 18, 0.65), transparent 60%);
+  color: var(--ivory);
+  font-family: "Lora", "Crimson Text", ui-serif, Georgia, "Times New Roman", serif;
   letter-spacing: 0.01em;
+  min-height: 100vh;
 }
 
 a {
@@ -24,23 +30,15 @@ a {
 }
 
 a:hover {
-  color: var(--crimson);
+  color: var(--gilded);
 }
 
-.bg-parchment {
-  background-color: var(--parchment);
+.bg-ink {
+  background-color: var(--ink);
 }
 
-.bg-ivory {
-  background-color: var(--ivory);
-}
-
-.text-ink {
-  color: var(--ink);
-}
-
-.text-crimson {
-  color: var(--crimson);
+.text-ivory {
+  color: var(--ivory);
 }
 
 .border-gilded {
@@ -48,50 +46,146 @@ a:hover {
 }
 
 .shadow-regal {
-  box-shadow: 0 35px 55px rgba(31, 26, 23, 0.08);
+  box-shadow: 0 45px 95px rgba(4, 3, 2, 0.65);
 }
 
 @layer base {
   h1,
   h2,
   h3,
-  h4 {
-    letter-spacing: 0.04em;
+  h4,
+  h5 {
+    font-family: "Cormorant Garamond", "EB Garamond", ui-serif, Georgia, serif;
+    letter-spacing: 0.08em;
+  }
+
+  section {
+    position: relative;
   }
 }
 
 @layer components {
+  .hero-backdrop {
+    background: radial-gradient(circle at 20% 20%, rgba(122, 30, 30, 0.35), transparent 70%),
+      radial-gradient(circle at 80% 10%, rgba(65, 18, 18, 0.3), transparent 65%),
+      linear-gradient(135deg, rgba(8, 6, 4, 0.95), rgba(31, 12, 12, 0.85));
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-backdrop::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='none' stroke='rgba(96,76,52,0.14)' stroke-width='0.5' d='M0 100h200M100 0v200M0 0l200 200M200 0L0 200'/%3E%3C/svg%3E");
+    opacity: 0.25;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+
+  .candle-flicker {
+    position: relative;
+  }
+
+  .candle-flicker::before {
+    content: "";
+    position: absolute;
+    inset: -60px -40px;
+    background: radial-gradient(circle, rgba(191, 164, 111, 0.22), transparent 70%);
+    opacity: 0.75;
+    animation: candleFlicker 5s ease-in-out infinite;
+    filter: blur(16px);
+    pointer-events: none;
+  }
+
   .button-primary {
-    @apply inline-flex items-center justify-center rounded-full px-8 py-3 text-sm uppercase tracking-[0.35em] transition-colors;
-    background: linear-gradient(120deg, var(--crimson), var(--crimson-dark));
+    @apply inline-flex items-center justify-center rounded-full px-10 py-3 text-sm uppercase tracking-[0.45em] transition-all duration-300 ease-in-out;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-deep));
     color: var(--ivory);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(191, 164, 111, 0.45);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.55);
   }
 
   .button-primary:hover {
-    filter: brightness(1.05);
+    background: linear-gradient(135deg, var(--gilded), #d3bf90);
+    color: var(--ink);
+    box-shadow: 0 18px 30px rgba(191, 164, 111, 0.28);
+  }
+
+  .button-link {
+    @apply inline-flex items-center gap-2 text-xs uppercase tracking-[0.45em] transition-all duration-300 ease-in-out;
+    color: rgba(245, 240, 230, 0.65);
+  }
+
+  .button-link:hover {
+    color: var(--gilded);
+    letter-spacing: 0.5em;
   }
 
   .panel {
-    @apply rounded-3xl border p-8 shadow-regal backdrop-blur;
-    border-color: rgba(182, 139, 45, 0.3);
-    background-color: rgba(251, 248, 241, 0.8);
+    @apply rounded-[28px] border px-10 py-10 transition-all duration-300 ease-in-out;
+    background: linear-gradient(135deg, rgba(24, 20, 16, 0.9), rgba(15, 12, 9, 0.85));
+    border-color: rgba(191, 164, 111, 0.35);
+    box-shadow: 0 24px 45px rgba(5, 4, 3, 0.65);
+  }
+
+  .panel:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 32px 65px rgba(191, 164, 111, 0.22);
+    border-color: rgba(191, 164, 111, 0.55);
+  }
+
+  .divider {
+    height: 1px;
+    width: 100px;
+    background: linear-gradient(90deg, transparent, rgba(191, 164, 111, 0.65), transparent);
+    margin-inline: auto;
+  }
+
+  .section-vignette::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.5));
+    pointer-events: none;
   }
 
   .fade-in {
-    animation: fadeIn 0.9s ease both;
+    animation: fadeIn 1s ease both;
+  }
+
+  .fade-in-delayed {
+    animation: fadeIn 1.2s ease both;
   }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(18px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes candleFlicker {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+
+  30% {
+    opacity: 0.85;
+    transform: scale(1.02);
+  }
+
+  60% {
+    opacity: 0.55;
+    transform: scale(0.98);
   }
 }
 

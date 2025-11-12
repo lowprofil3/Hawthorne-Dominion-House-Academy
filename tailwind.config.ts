@@ -9,14 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        parchment: "var(--parchment)",
-        ivory: "var(--ivory)",
         ink: "var(--ink)",
         crimson: "var(--crimson)",
+        crimsonDeep: "var(--crimson-deep)",
         gilded: "var(--gilded)",
+        ivory: "var(--ivory)",
+        parchmentDark: "var(--parchment-dark)",
+        shadowGold: "var(--shadow-gold)",
       },
       fontFamily: {
-        serif: ["Cormorant Garamond", "ui-serif", "Georgia", "serif"],
+        display: ["Cormorant Garamond", "EB Garamond", "ui-serif", "Georgia", "serif"],
+        body: ["Lora", "Crimson Text", "ui-serif", "Georgia", "serif"],
       },
     },
   },
