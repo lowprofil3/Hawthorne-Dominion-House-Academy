@@ -32,18 +32,21 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${cormorant.className} bg-parchment text-ink antialiased`}>
         <div className="flex min-h-screen flex-col">
-          <header className="border-b border-gilded/40 bg-ivory/90 backdrop-blur">
+          <header className="border-b border-gilded/40 bg-ink-deep/95 text-gold backdrop-blur">
             <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
-              <Link href="/" className="flex items-center gap-3 text-lg font-semibold uppercase tracking-[0.3em] text-ink">
+              <Link
+                href="/"
+                className="flex items-center gap-3 text-lg font-semibold uppercase tracking-[0.3em] text-gold"
+              >
                 <span className="hidden sm:inline">Hawthorne Dominion House Academy</span>
                 <span className="sm:hidden">HDH Academy</span>
               </Link>
-              <nav className="flex items-center gap-6 text-sm">
+              <nav className="flex items-center gap-6 text-sm text-gold/80">
                 {navigation.map((item) => (
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="transition-colors hover:text-crimson"
+                    className="transition-colors hover:text-gold"
                     prefetch={false}
                   >
                     {item.label}
@@ -53,7 +56,7 @@ export default function RootLayout({
             </div>
           </header>
           <main className="flex-1">{children}</main>
-          <footer className="border-t border-gilded/40 bg-ivory/90 py-6 text-center text-xs tracking-[0.3em] uppercase text-ink/70">
+          <footer className="border-t border-gilded/40 bg-ink-deep/95 py-6 text-center text-xs uppercase tracking-[0.3em] text-gold/80">
             © Hawthorne Dominion House Academy. All Rights Reserved.
           </footer>
         </div>

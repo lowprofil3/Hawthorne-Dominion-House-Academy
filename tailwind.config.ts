@@ -16,6 +16,9 @@ const config: Config = {
         ivory: "var(--ivory)",
         parchmentDark: "var(--parchment-dark)",
         shadowGold: "var(--shadow-gold)",
+        "ink-deep": "#0a0807",
+        gold: "#c5b273",
+        "accent-crimson": "#6a1717",
       },
       fontFamily: {
         display: ["Cormorant Garamond", "EB Garamond", "ui-serif", "Georgia", "serif"],
